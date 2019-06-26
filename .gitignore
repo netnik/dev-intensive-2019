@@ -1,8 +1,6 @@
 #cheneo
 
-
 # Built application files
-<<<<<<< HEAD
 build/
 
 # Files for the ART/Dalvik VM
@@ -10,14 +8,6 @@ build/
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
-=======
-*.apk
-*.ap_
-*.aab
-
-# Local configuration file (sdk path, etc)
-local.properties
->>>>>>> conflict
 
 # Gradle files
 .gradle/
@@ -28,7 +18,6 @@ local.properties
 # User-specific configurations
 *.iml
 
-<<<<<<< HEAD
 # Local configuration file (sdk path, etc)
 local.properties
 
@@ -51,23 +40,3 @@ google-services.json
 
 # Version control
 vcs.xml
-=======
-# OS-specific files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Version control
-vcs.xml
-
-# lint
-lint/intermediates/
-lint/generated/
-lint/outputs/
-lint/tmp/
-lint/reports/
->>>>>>> conflict
