@@ -18,13 +18,7 @@ data class User (
 
     //var introBit: String,
 
-    constructor(id: String, firstName: String?, lastName: String?) : this(
-        id = id,
-        firstName = firstName,
-        lastName = lastName,
-        avatar = null
-    )
-
+    constructor(id: String, firstName: String?, lastName: String?) : this(id, firstName, lastName, avatar = null)
     constructor(id: String) : this(id,"Marko", "Polo")
 
     init {
@@ -39,10 +33,8 @@ data class User (
 
             val (firstName, lastName) = Utils.parseFullName(fullName)
 
-            return User(id = "$lastId", firstName = firstName, lastName = lastName)
-
+            return User("$lastId", firstName, lastName)
         }
-
     }
 
     class Builder {
@@ -65,7 +57,6 @@ data class User (
         fun isOnline(isOnline: Boolean) = apply { this.isOnline = isOnline }
         fun build() = User(id, firstName, lastName, avatar, raiting, respect, lastVisit, isOnline)
     }
-
 
 }
 

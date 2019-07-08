@@ -2,7 +2,6 @@ package ru.skillbranch.devintensive.utils
 
 object Utils {
     fun parseFullName(fullName: String?): Pair<String?, String?> {
-        //TODO FIX ME!!!!!
         val parts= fullName?.trim()?.split(" ")
 
         val firstName = if (parts?.getOrNull(0).isNullOrBlank()) null else parts?.get(0)
@@ -13,8 +12,6 @@ object Utils {
     }
 
     fun transliteration(payload: String, divider: String = " "): String {
-        //TODO("not implemented") {}
-        // 1:18:34
         var result = ""
         val letters = getLetter()
 
@@ -28,8 +25,6 @@ object Utils {
     }
 
     fun toInitials(firstName: String?, lastName: String?): String? {
-        //TODO("not implemented") {}
-        // 1:19:07
         var result = ""
         if (firstName.isNullOrBlank() && lastName.isNullOrBlank()) return null
         if (!firstName.isNullOrBlank()) result += firstName.trim().first().toUpperCase().toString()
@@ -49,4 +44,3 @@ object Utils {
     )
 }
 
-//47:38

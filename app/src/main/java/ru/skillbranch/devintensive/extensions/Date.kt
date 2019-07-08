@@ -10,11 +10,20 @@ import java.util.*
  * Copyright (c) 2019 NetNik. All rights reserved.
  **/
 
+
 const val SECOND = 1000L
 const val MINUTE = 60 * SECOND
 const val HOUR = 60 * MINUTE
 const val DAY = 24 * HOUR
 
+
+
+enum class TimeUnits(val value: Long) {
+    SECOND(1000L),
+    MINUTE(SECOND.value*60),
+    HOUR(MINUTE.value*60),
+    DAY(HOUR.value*24)
+}
 
 
 fun Date.format(pattern: String = "HH:mm:ss dd.MM.yy"): String {
@@ -35,16 +44,6 @@ fun Date.add(value: Int, units: TimeUnits = TimeUnits.SECOND) : Date {
     return this
 }
 
-enum class TimeUnits(val value: Long) {
-    SECOND(1000L),
-    MINUTE(SECOND.value*60),
-    HOUR(MINUTE.value*60),
-    DAY(HOUR.value*24)
-
-
-}
 
 
 
-
-/*1:04:41*/

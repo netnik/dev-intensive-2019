@@ -15,7 +15,7 @@ fun User.toUserView(): UserView {
 
     val nickname = Utils.transliteration("$firstName $lastName")
     val initials = Utils.toInitials(firstName, lastName)
-    val status = if (lastVisit == null) "Niente entrano" else if (isOnline) "online" else "Ultimo visitare ${lastVisit}"
+    val status = if (lastVisit == null) "Еще не был" else if (isOnline) "online" else "Последнее посещение  ${lastVisit}"
 
     return UserView(
         id,
