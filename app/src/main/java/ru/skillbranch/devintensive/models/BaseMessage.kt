@@ -1,7 +1,7 @@
 package ru.skillbranch.devintensive.models
 
 import java.util.*
-import java.lang.*
+
 
 
 /**
@@ -11,29 +11,29 @@ import java.lang.*
 
 
 abstract class BaseMessage (
-    val id: String,
-    val from: User?,
-    val chat: Chat,
-    val isIncoming: Boolean = false,
-    val date: Date = Date()
+    open val id: String,
+    open val from: User?,
+    open val chat: Chat,
+    open val isIncoming: Boolean = false,
+    open val date: Date = Date()
 ) {
 
     abstract  fun formatMessage(): String
-    companion object AbstractFactory{
+    companion object AbstractFactory {
         var lastId = -1
         fun makeMessage(
             from: User?,
             chat: Chat,
-            date: Date,
             type: String = "text",
             payload: Any?,
-            isIncoming: Boolean = false
+            isIncoming: Boolean = false,
+            date: Date = Date()
         ): BaseMessage {
             lastId++
             return when(type) {
-                "image"-> ImageMessage("${lastId}", from, chat, date = date, image = payload as String, isIncoming = isIncoming)
-                "text" -> TextMessage("${lastId}", from, chat, date = date, text = payload as String, isIncoming = isIncoming)
-                else -> throw IllegalArgumentException()
+                "image"-> ImageMessage("$lastId", from, chat, date = date, image = payload as String, isIncoming = isIncoming)
+                else -> TextMessage("$lastId", from, chat, date = date, text = payload as String, isIncoming = isIncoming)
+
             }
         }
     }
