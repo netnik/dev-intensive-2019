@@ -3,7 +3,6 @@ package ru.skillbranch.devintensive.models
 import java.util.*
 
 
-
 /**
  * Created by CheNeo on 05.07.2019.
  * Copyright (c) 2019 NetNik. All rights reserved.
@@ -19,15 +18,15 @@ abstract class BaseMessage (
 ) {
 
     abstract  fun formatMessage(): String
-    companion object AbstractFactory {
+    companion object AbstractFactory{
         private var lastId = -1
         fun makeMessage(
             from: User?,
             chat: Chat,
+            date: Date,
             type: String = "text",
             payload: Any?,
-            isIncoming: Boolean = false,
-            date: Date = Date()
+            isIncoming: Boolean = false
         ): BaseMessage {
             lastId++
             return when(type) {
